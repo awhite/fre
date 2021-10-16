@@ -2,9 +2,37 @@
   "name": "find-random-episode-inator",
   "version": "0.0.1",
   "description": "Search for TV show and generate random episode for it",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "babel-node scripts/init.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-ts": "npx tsc -w",
+    "watch-node": "nodemon dist/index.js",
+    "local": "concurrently -k -c \"yellow.bold,green.bold\" \"npm:watch-ts\" \"npm:watch-node\"",
+    "sandbox": "babel-node scripts/.sandbox.js"
+  },
+  "author": "Alex White",
+  "license": "ISC",
+  "dependencies": {
+    "@types/morgan": "^1.9.3",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@tsconfig/node12": "^1.0.9",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.0",
+    "babel-plugin-inline-json-import": "^0.3.2",
+    "concurrently": "^6.3.0",
+    "inquirer": "^8.2.0",
+    "nodemon": "^2.0.13",
+    "typac": "^0.1.10",
+    "typescript": "^4.4.4"
   },
   "repository": {
     "type": "git",
