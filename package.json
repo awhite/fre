@@ -1,0 +1,19 @@
+{
+  "name": "find-random-episode-inator",
+  "version": "0.0.1",
+  "description": "Search for TV show and generate random episode for it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/awhite/fre.git"
+  },
+  "author": "Alex White",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awhite/fre/issues"
+  },
+  "homepage": "https://github.com/awhite/fre#readme"
+}
