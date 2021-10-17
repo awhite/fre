@@ -4,28 +4,39 @@
   "description": "Search for TV show and generate random episode for it",
   "main": "src/index.js",
   "scripts": {
+    "start": "node dist/index.js",
     "init": "babel-node scripts/init.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch-ts": "npx tsc -w",
+    "ts": "tsc",
+    "watch-ts": "npm run ts -- -w",
     "watch-node": "nodemon dist/index.js",
-    "local": "concurrently -k -c \"yellow.bold,green.bold\" \"npm:watch-ts\" \"npm:watch-node\"",
+    "local": "npm run ts && concurrently -k -c \"yellow.bold,green.bold\" \"npm:watch-ts\" \"npm:watch-node\"",
     "sandbox": "babel-node scripts/.sandbox.js"
   },
   "author": "Alex White",
   "license": "ISC",
   "dependencies": {
     "@types/morgan": "^1.9.3",
+    "axios": "^0.23.0",
     "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "jest": "^27.2.5",
+    "morgan": "^1.10.0",
+    "ts-jest": "^27.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/node": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@tsconfig/node12": "^1.0.9",
+    "@types/axios": "^0.14.0",
     "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/inquirer": "^8.1.3",
+    "@types/jest": "^27.0.2",
     "@types/node": "^16.11.0",
     "babel-plugin-inline-json-import": "^0.3.2",
     "concurrently": "^6.3.0",
@@ -38,8 +49,6 @@
     "type": "git",
     "url": "git+ssh://git@github.com/awhite/fre.git"
   },
-  "author": "Alex White",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/awhite/fre/issues"
   },
