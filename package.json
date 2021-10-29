@@ -2,7 +2,7 @@
   "name": "find-random-episode-inator",
   "version": "0.0.1",
   "description": "Search for TV show and generate random episode for it",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
     "init": "babel-node scripts/init.js",
