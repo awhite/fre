@@ -4,7 +4,7 @@
   "description": "Search for TV show and generate random episode for it",
   "main": "dist/routes.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node dist/index.js -r dotenv/config",
     "init": "babel-node scripts/init.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts": "tsc",

@@ -5,8 +5,6 @@ const defaultParams = {
   language: 'en-US',
 }
 
-console.log(defaultParams)
-
 export default axios.create({
   baseURL: 'https://api.themoviedb.org/3',
   params: defaultParams,
