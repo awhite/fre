@@ -22,6 +22,9 @@ export async function getShowDetails(showId: number) {
 
 export async function getRandomEpisodeForShow(showId: number) {
   const showDetails = (await getShowDetails(showId)) as Record<string, any>
+  removeSpecials(showDetails)
+
+  console.log(showDetails)
 
   const randomEpisodeNum =
     Math.floor(Math.random() * showDetails.number_of_episodes) + 1
@@ -36,6 +39,10 @@ export async function getRandomEpisodeForShow(showId: number) {
 
   const seasonNum = showDetails.seasons[seasonIndex].season_number
   return await getEpisodeForShow(showId, seasonNum, episodeNum)
+}
+
+function removeSpecials(showDetails: Record<string, any>) {
+  if (showDetails.seasons[0].season_number === 0) showDetails.seasons.shift()
 }
 
 export async function getEpisodeForShow(
